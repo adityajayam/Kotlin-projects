@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">VisionTextRecognition</string>
+    <string name="take_photo">Take Photo</string>
 </resources>
