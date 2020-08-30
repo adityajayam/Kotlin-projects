@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         initialize();
         if (checkAllPermissionGranted()) {
             //TODO call camera
+            CameraUtil.startCamera(this, this, camera_preview.createSurfaceProvider())
         } else {
             ActivityCompat.requestPermissions(
                 this,
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             REQUEST_CODE_CAMERA_PERMISSION -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //TODO start camera
+                    CameraUtil.startCamera(this, this, camera_preview.createSurfaceProvider())
                 } else {
                     Toast.makeText(
                         this,
