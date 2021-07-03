@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_start_end_margins">10dp</dimen>
+    <dimen name="constraint_layout_start_end_margins">20dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_margin">32dp</dimen>
+</resources>
