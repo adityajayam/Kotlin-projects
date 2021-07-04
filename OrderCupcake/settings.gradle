@@ -1,0 +1,2 @@
+rootProject.name = "OrderCupcake"
+include ':app'
