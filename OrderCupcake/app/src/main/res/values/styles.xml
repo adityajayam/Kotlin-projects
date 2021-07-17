@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="divider">
+        <item name="android:background">?attr/dividerHorizontal</item>
+    </style>
+
+    <style name="Widget.Cupcake.TextView.OrderSummary" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.Cupcake.TextView.Label" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <style name="Widget.Cupcake.TextView.FinalPrice" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
+    </style>
+
+    <style name="CompoundButton.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:paddingEnd">@dimen/radio_button_padding</item>
+        <item name="android:paddingStart">@dimen/radio_button_padding</item>
+        <item name="android:paddingLeft">@dimen/radio_button_padding</item>
+        <item name="android:paddingRight">@dimen/radio_button_padding</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chooseFlavourFragment"
+            type="com.example.ordercupcake.ui.fragments.ChooseFlavourFragment" />
+
+        <variable
+            name="orderViewModel"
+            type="com.example.ordercupcake.model.OrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_20dp"
+        tools:context=".ui.fragments.ChooseFlavourFragment">
+
+
+        <RadioGroup
+            android:id="@+id/radio_group_choose_flavor"
+            style="@style/CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/vanillaButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/vanillaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{orderViewModel.flavour.equals(@string/vanilla_flavour)}"
+                android:onClick="@{()->orderViewModel.setFlavor(@string/vanilla_flavour)}"
+                android:text="@string/vanilla_flavour" />
+
+            <RadioButton
+                android:id="@+id/redVelvetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{orderViewModel.flavour.equals(@string/red_velvet_flavour)}"
+                android:onClick="@{()->orderViewModel.setFlavor(@string/red_velvet_flavour)}"
+                android:text="@string/red_velvet_flavour" />
+
+            <RadioButton
+                android:id="@+id/coffeeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{orderViewModel.flavour.equals(@string/coffee_flavour)}"
+                android:onClick="@{()->orderViewModel.setFlavor(@string/coffee_flavour)}"
+                android:text="@string/coffee_flavour" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_choose_flavor" />
+
+        <TextView
+            android:id="@+id/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Subtotal $5.00" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            android:text="@string/cancel"
+            android:onClick="@{()->chooseFlavourFragment.cancelOrder()}"
+            app:layout_constraintEnd_toStartOf="@id/next_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/next_button" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:onClick="@{()->chooseFlavourFragment.callPickUpFragment()}"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancel_button"
+            app:layout_constraintTop_toBottomOf="@id/subtotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
