@@ -5,4 +5,5 @@
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorOnSecondary">#232323</color>
     <color name="logInButtonTextColor">#FFFFFF</color>
+    <color name="h1SubtitleColor">#FFFFFF</color>
 </resources>

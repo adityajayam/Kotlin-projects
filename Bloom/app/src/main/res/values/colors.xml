@@ -8,4 +8,5 @@
     <color name="colorOnPrimary">#232323</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="logInButtonTextColor">#3F2C2C</color>
+    <color name="h1SubtitleColor">#232323</color>
 </resources>
